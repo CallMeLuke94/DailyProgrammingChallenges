@@ -17,6 +17,7 @@ namespace MyFristTextEditor
         private string file_name = "";
         private bool cancelClose = false;
         private string star = "";
+        public bool replaceButton = true;
 
         public Form1()
         {
@@ -180,6 +181,21 @@ namespace MyFristTextEditor
             closeToolStripMenuItem_Click(sender, e);
             if (cancelClose)
                 e.Cancel = true;
+        }
+
+        private void findReplaceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            replaceWindow();
+        }
+
+        private void replaceWindow()
+        {
+            if (replaceButton == true)
+            {
+                Form2 f = new Form2(this);
+                f.Show();
+                replaceButton = false;
+            }
         }
     }
 }
